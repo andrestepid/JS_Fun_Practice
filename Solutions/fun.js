@@ -230,6 +230,20 @@ const addf = a => b => a + b
 console.log(addf(3)(4));
 console.log('-----------------');
 
+// Write a function liftf that takes a binary function, and makes it callable
+// with two invocations.
+
+function liftf(binary) {
+    return function(x) {
+        return function(y) {
+            return binary(x, y)
+        }
+    }
+}
+
+console.log(liftf(addb)(1)(2));
+console.log('-----------------');
+
 
 
 
